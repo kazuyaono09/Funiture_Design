@@ -1,0 +1,635 @@
+@charset "utf-8";
+
+/* ==================== 色一覧 ==================== */
+$c-text: #333333;
+$c-white: #ffffff;
+$c-white-hover: #E2E6EA;
+$c-border: #808080;
+$c-placeholder: #999999;
+$c-main: #184C96;
+$c-main-hover: #113569;
+
+/* ==================== 側設定 ==================== */
+html {
+  font-family: 'Noto Sans JP','sans-serif' ,'ヒラギノ角ゴシック';
+  scroll-behavior:smooth;
+}
+body {
+  position: relative;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+/* ============================================================================================================
+                                                メインコンテンツ
+============================================================================================================ */
+main {
+  width: 100%;
+  height: 100%;
+}
+@media screen and (max-width: 768px) {
+  main {
+    width: 100%;
+    height: 100%;
+  }  
+}
+
+.inner {
+  padding:0px 80px;
+}
+@media screen and (max-width: 768px) {
+  .inner {
+    padding:0px 40px;
+  }
+}
+
+.section-title {
+  font-size: 14px;
+  font-family: "ヒラギノ角ゴシック";
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+
+//////header//////
+.header {
+  width: 100%;
+  height: 80px;
+  background-color: $c-white;
+  position: fixed;
+  z-index: 20;
+  .header-box {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .header-logo {
+      width: 180px;
+      height: 21px;
+      cursor: pointer;
+    }
+    .humbergar-menu {
+      width: 30px;
+      height: 30px;
+      position: relative;
+      cursor: pointer;
+      .bar01 {
+        width: 30px;
+        height: 2px;
+        background-color: $c-text;
+        position: absolute;
+        top: 38%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        transition: 0.3s all;
+      }
+      .bar02 {
+        width: 30px;
+        height: 2px;
+        background-color: $c-text;
+        position: absolute;
+        top: 62%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        transition: 0.3s all;
+      }
+     //humbergar-menuをクリックした時の切り替え動作
+      &.click-btn {
+        display: block;
+        cursor: pointer;
+        z-index: 10;
+        .bar01 {
+          background-color: $c-white;
+          top: 50%;
+          transform: translate(-50%,-50%) rotate(-45deg);
+          z-index: 10;
+        }
+        .bar02 {
+          background-color: $c-white;
+          top: 50%;
+          transform: translate(-50%,-50%) rotate(45deg);
+          z-index: 10;
+        }
+      }    
+    }
+    .header-navi {
+      width: 100%;
+      height: 100vh;
+      display: none;
+      background-color: #000000;
+      position: fixed;
+      top: 0;
+      left: 0;
+      opacity: 0.8;
+      transition:0.3s all;
+      cursor: pointer;
+      .header-navi-list {
+        padding: 36px 50px;
+        .header-navi-item {
+          margin-bottom: 14px;
+          .item-name {
+            font-size: 14px;
+            font-family: "ヒラギノ角ゴシック";
+            font-weight: normal;
+            letter-spacing: 0.1em;
+            line-height: 26px;
+            color: $c-white;  
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    .header-navi.active {
+      display: block;
+    }  
+  }
+}
+@media screen and (max-width: 768px) {
+  .header {
+    width: 100%;
+    .header-box {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .header-logo {
+        width: 180px;
+        height: 21px;
+        cursor: pointer;
+      }
+      .humbergar-menu {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+//////main//////
+.main-contents {
+  width: 100%;
+  height: auto;
+  padding-top: 80px;
+  margin-bottom: 100px;
+  .main-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;                           //子要素list-itemの間隔を30pxとします。↓↓↓↓
+    margin-bottom: 10px;
+    .main-list-item {
+      width: calc(calc(100% - 90px) / 4); //((100%から３つの間隔合わせて90px)を引いた大きさを４等分)します。
+      display: block;
+      margin-bottom: 20px;
+      cursor: pointer;
+      transition: all 0.5s;
+      .main-item {
+        .main-item-img {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+        .main-item-title {
+          font-size: 12px;
+          font-weight: normal;
+          font-family: "ヒラギノ角ゴシック";
+          color: $c-text;
+          text-align: left;
+          letter-spacing: 0.02em;
+          line-height: 21px;
+        }
+        .item-tax {
+          font-size: 12px;
+          font-weight: normal;
+          font-family: "ヒラギノ角ゴシック";
+          color: $c-text;
+          text-align: left;
+          letter-spacing: 0.02em;
+          line-height: 21px;
+        }
+      }    
+      &:hover {
+        filter: contrast(0.7);
+      }
+    }
+  }
+  .view-more {
+    width: 75px;
+    font-size: 14px;
+    font-family: "ヒラギノ角ゴシック";
+    font-weight: 300;
+    display: block;
+    color: $c-text;
+    border-bottom: 1px solid $c-text;
+    text-decoration: none;
+    transition: all 0.3s;
+    padding-bottom: 3px;
+    margin: 0 auto;
+    &:hover {
+      width: 100px;
+      filter: contrast(0.7);
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-contents {
+    width: 100%;
+    margin-bottom: 100px;
+    .main-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;  
+      margin-bottom: 10px;
+      .main-list-item {
+        width: calc(calc(100% - 30px) / 2);
+        .main-item {
+          .main-item-img {
+            width: 100%;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  }  
+}
+
+//////下層ページsection-about//////
+.section-about {
+  width: 100%;
+  height: 750px;
+  padding-top: 120px;
+  padding-bottom: 160px;
+  .about-textA {
+    width: 60%;
+    font-size: 14px;
+    font-family: "ヒラギノ角ゴシック";
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    line-height: 27px;
+    text-align: left;
+    margin-bottom: 30px;
+  }
+  .about-textB {
+    width: 60%;
+    font-size: 14px;
+    font-family: "ヒラギノ角ゴシック";
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    line-height: 27px;
+    text-align: left;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .section-about {
+    width: 100%;
+    height: 750px;
+    padding-top: 120px;
+    padding-bottom: 10px;
+    .about-textA {
+      width: 100%;
+    }
+    .about-textB {
+      width: 100%;
+    }
+  }  
+}
+
+//ここから下層ページsection-companyです//
+.section-company {
+  width: 100%;
+  padding-top: 120px;
+  padding-bottom: 160px;
+  .company-info {
+    width: 60%;
+    margin-bottom: 20px;
+    .info-box {
+      border-bottom: 1px solid #e2e2e2;
+      display: block;
+      .info-title {
+        width: 180px;
+        font-size: 14px;
+        font-family: "ヒラギノ角ゴシック";
+        font-weight: 300;
+        letter-spacing: 0.05em;
+        line-height: 24px;
+        text-align: left;
+        padding: 20px 10px;
+      }
+      .info-text {
+        font-size: 14px;
+        font-family: "ヒラギノ角ゴシック";
+        font-weight: 300;
+        letter-spacing: 0.05em;
+        line-height: 24px;
+        text-align: left;
+        padding: 20px 10px;
+        &:last-child {
+          line-height: 26px;
+        }
+      }
+      &:last-child {
+        border: none;
+      }
+    }
+  }
+  .info-map {
+    width: 60%;
+    height: 500px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .section-company {
+    width: 100%;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    .company-info {
+      width: 100%;
+      margin-bottom: 10px;
+      .info-box {
+        border-bottom: 1px solid #e2e2e2;
+        display: block;
+        .info-title {
+          padding: 20px 10px 5px 10px;
+        }
+        .info-text {
+          padding: 5px 10px 20px 10px;
+          &:last-child {
+            line-height: 26px;
+          }
+        }
+        &:last-child {
+          border: none;
+        }
+      }
+    }
+    .info-map {
+      width: 100%;
+      height: 300px;
+    }
+  }  
+}
+
+//////section-prodact//////
+.section-product {
+  padding-top: 120px;
+  padding-bottom: 160px;
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;  
+    margin-bottom: 10px;
+    .product-list-item {
+      width: calc(calc(100% - 90px) / 4);
+      display: block;
+      margin-bottom: 20px;
+      cursor: pointer;
+      transition: 0.5s;
+      .product-item {
+        .product-item-img {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+        .product-item-title {
+          font-size: 12px;
+          font-weight: normal;
+          font-family: "ヒラギノ角ゴシック";
+          color: $c-text;
+          text-align: left;
+          letter-spacing: 0.02em;
+          line-height: 21px;
+        }
+        .item-tax {
+          font-size: 12px;
+          font-weight: normal;
+          font-family: "ヒラギノ角ゴシック";
+          color: $c-text;
+          text-align: left;
+          letter-spacing: 0.02em;
+          line-height: 21px;
+        }
+      }    
+      &:hover {
+        filter: contrast(0.7);
+      }
+    }
+  }
+  .pagination {
+    width: 100px;
+    display: flex;
+    list-style: none;
+    margin: 0 auto;
+    .page01 {
+      font-size: 14px;
+      font-weight: normal;
+      font-family: "ヒラギノ角ゴシック";
+      color: $c-text;
+      padding: 0px 20px;
+    }
+    .page02 {
+      font-size: 14px;
+      font-weight: normal;
+      font-family: "ヒラギノ角ゴシック";
+      padding: 0px 20px 5px 20px;
+      cursor: pointer;
+      a {
+        color: $c-text;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .section-product {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;  
+      margin-bottom: 30px;
+      .product-list-item {
+        list-style: none;
+        width: calc(calc(100% - 30px) / 2);
+        .product-item {
+          .product-item-img {
+            width: 100%;
+            margin-bottom: 10px;
+          }
+        }    
+        &:hover {
+          filter: contrast(0.7);
+        }
+      }
+    }
+  }  
+}
+
+//////section-product2//////
+.section-products2 {
+  padding-top: 120px;
+  padding-bottom: 160px;
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;  
+    margin-bottom: 10px;
+    .product-list-item {
+      width: calc(calc(100% - 90px) / 4);
+      display: block;
+      margin-bottom: 20px;
+      cursor: pointer;
+      transition: 0.5s;
+      .product-link {
+        .product-img {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+        .product-title {
+          font-size: 12px;
+          font-weight: normal;
+          font-family: "ヒラギノ角ゴシック";
+          color: $c-text;
+          text-align: left;
+          letter-spacing: 0.02em;
+          line-height: 21px;
+        }
+        .item-tax {
+          font-size: 12px;
+          font-weight: normal;
+          font-family: "ヒラギノ角ゴシック";
+          color: $c-text;
+          text-align: left;
+          letter-spacing: 0.02em;
+          line-height: 21px;
+        }
+      }    
+      &:hover {
+        filter: contrast(0.7);
+      }
+    }
+  }
+  .pagination {
+    width: 100px;
+    display: flex;
+    list-style: none;
+    margin: 0 auto;
+    .page01 {
+      font-size: 14px;
+      font-weight: normal;
+      font-family: "ヒラギノ角ゴシック";
+      color: $c-text;
+      padding: 0px 20px;
+      a {
+        color: $c-text;
+        text-decoration: underline;
+      }
+    }
+    .page02 {
+      font-size: 14px;
+      font-weight: normal;
+      font-family: "ヒラギノ角ゴシック";
+      padding: 0px 20px 5px 20px;
+      cursor: pointer;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .section-products2 {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;  
+      margin-bottom: 30px;
+      .product-list-item {
+        width: calc(calc(100% - 30px) / 2);
+        display: block;
+        margin-bottom: 20px;
+        cursor: pointer;
+        transition: 0.5s;
+        .product-link {
+          .product-img {
+            width: 100%;
+            margin-bottom: 10px;
+          }
+        }  
+      }
+    }
+  }  
+}
+
+
+
+//ここからフッターです。
+.footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  .sns-box {
+    .instagram-link {
+      font-size: 12px;
+      font-family: "ヒラギノ角ゴシック";
+      font-weight: normal;
+      color: $c-text;
+      letter-spacing: 0.1em;
+      line-height: 24px;
+      text-decoration: none;
+      margin-right: 30px;
+    }
+    .twitter-link {
+      font-size: 12px;
+      font-family: "ヒラギノ角ゴシック";
+      font-weight: normal;
+      color: $c-text;
+      letter-spacing: 0.1em;
+      line-height: 24px;
+      text-decoration: none;
+      margin-right: 30px;
+    }
+    .facebook-link {
+      font-size: 12px;
+      font-family: "ヒラギノ角ゴシック";
+      font-weight: normal;
+      color: $c-text;
+      letter-spacing: 0.1em;
+      line-height: 24px;
+      text-decoration: none;
+    }
+  }
+  .copy-right {
+    font-size: 10px;
+    font-family: "ヒラギノ角ゴシック";
+    font-weight: normal;
+    color: $c-text;
+    text-align: right;
+    letter-spacing: 0.1em;
+    line-height: 24px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .footer {
+    width: 100%;
+    display: block;
+    margin-bottom: 30px;
+    .sns-box {
+      margin-bottom: 15px;
+      .instagram-link {
+        margin-right: 25px;
+      }
+      .twitter-link {
+        margin-right: 25px;
+      }
+    }
+    .copy-right {
+      font-size: 9px;
+      text-align: left;
+    }
+  }  
+}

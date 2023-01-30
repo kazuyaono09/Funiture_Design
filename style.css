@@ -1,0 +1,661 @@
+@charset "UTF-8";
+/* ==================== 色一覧 ==================== */
+/* ==================== 側設定 ==================== */
+html {
+  font-family: "Noto Sans JP", "sans-serif", "ヒラギノ角ゴシック";
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+/* ============================================================================================================
+                                                メインコンテンツ
+============================================================================================================ */
+main {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    width: 100%;
+    height: 100%;
+  }
+}
+.inner {
+  padding: 0px 80px;
+}
+
+@media screen and (max-width: 768px) {
+  .inner {
+    padding: 0px 40px;
+  }
+}
+.section-title {
+  font-size: 14px;
+  font-family: "ヒラギノ角ゴシック";
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.header {
+  width: 100%;
+  height: 80px;
+  background-color: #ffffff;
+  position: fixed;
+  z-index: 20;
+}
+.header .header-box {
+  width: 100%;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.header .header-box .header-logo {
+  width: 180px;
+  height: 21px;
+  cursor: pointer;
+}
+.header .header-box .humbergar-menu {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+}
+.header .header-box .humbergar-menu .bar01 {
+  width: 30px;
+  height: 2px;
+  background-color: #333333;
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+.header .header-box .humbergar-menu .bar02 {
+  width: 30px;
+  height: 2px;
+  background-color: #333333;
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+.header .header-box .humbergar-menu.click-btn {
+  display: block;
+  cursor: pointer;
+  z-index: 10;
+}
+.header .header-box .humbergar-menu.click-btn .bar01 {
+  background-color: #ffffff;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+          transform: translate(-50%, -50%) rotate(-45deg);
+  z-index: 10;
+}
+.header .header-box .humbergar-menu.click-btn .bar02 {
+  background-color: #ffffff;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+          transform: translate(-50%, -50%) rotate(45deg);
+  z-index: 10;
+}
+.header .header-box .header-navi {
+  width: 100%;
+  height: 100vh;
+  display: none;
+  background-color: #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+  cursor: pointer;
+}
+.header .header-box .header-navi .header-navi-list {
+  padding: 36px 50px;
+}
+.header .header-box .header-navi .header-navi-list .header-navi-item {
+  margin-bottom: 14px;
+}
+.header .header-box .header-navi .header-navi-list .header-navi-item .item-name {
+  font-size: 14px;
+  font-family: "ヒラギノ角ゴシック";
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  line-height: 26px;
+  color: #ffffff;
+  text-decoration: none;
+}
+.header .header-box .header-navi.active {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    width: 100%;
+  }
+  .header .header-box {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .header .header-box .header-logo {
+    width: 180px;
+    height: 21px;
+    cursor: pointer;
+  }
+  .header .header-box .humbergar-menu {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+  }
+}
+.main-contents {
+  width: 100%;
+  height: auto;
+  padding-top: 80px;
+  margin-bottom: 100px;
+}
+.main-contents .main-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 10px;
+}
+.main-contents .main-list .main-list-item {
+  width: calc(calc(100% - 90px) / 4);
+  display: block;
+  margin-bottom: 20px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.main-contents .main-list .main-list-item .main-item .main-item-img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.main-contents .main-list .main-list-item .main-item .main-item-title {
+  font-size: 12px;
+  font-weight: normal;
+  font-family: "ヒラギノ角ゴシック";
+  color: #333333;
+  text-align: left;
+  letter-spacing: 0.02em;
+  line-height: 21px;
+}
+.main-contents .main-list .main-list-item .main-item .item-tax {
+  font-size: 12px;
+  font-weight: normal;
+  font-family: "ヒラギノ角ゴシック";
+  color: #333333;
+  text-align: left;
+  letter-spacing: 0.02em;
+  line-height: 21px;
+}
+.main-contents .main-list .main-list-item:hover {
+  -webkit-filter: contrast(0.7);
+          filter: contrast(0.7);
+}
+.main-contents .view-more {
+  width: 75px;
+  font-size: 14px;
+  font-family: "ヒラギノ角ゴシック";
+  font-weight: 300;
+  display: block;
+  color: #333333;
+  border-bottom: 1px solid #333333;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  padding-bottom: 3px;
+  margin: 0 auto;
+}
+.main-contents .view-more:hover {
+  width: 100px;
+  -webkit-filter: contrast(0.7);
+          filter: contrast(0.7);
+}
+
+@media screen and (max-width: 768px) {
+  .main-contents {
+    width: 100%;
+    margin-bottom: 100px;
+  }
+  .main-contents .main-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 10px;
+  }
+  .main-contents .main-list .main-list-item {
+    width: calc(calc(100% - 30px) / 2);
+  }
+  .main-contents .main-list .main-list-item .main-item .main-item-img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+.section-about {
+  width: 100%;
+  height: 750px;
+  padding-top: 120px;
+  padding-bottom: 160px;
+}
+.section-about .about-textA {
+  width: 60%;
+  font-size: 14px;
+  font-family: "ヒラギノ角ゴシック";
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  line-height: 27px;
+  text-align: left;
+  margin-bottom: 30px;
+}
+.section-about .about-textB {
+  width: 60%;
+  font-size: 14px;
+  font-family: "ヒラギノ角ゴシック";
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  line-height: 27px;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .section-about {
+    width: 100%;
+    height: 750px;
+    padding-top: 120px;
+    padding-bottom: 10px;
+  }
+  .section-about .about-textA {
+    width: 100%;
+  }
+  .section-about .about-textB {
+    width: 100%;
+  }
+}
+.section-company {
+  width: 100%;
+  padding-top: 120px;
+  padding-bottom: 160px;
+}
+.section-company .company-info {
+  width: 60%;
+  margin-bottom: 20px;
+}
+.section-company .company-info .info-box {
+  border-bottom: 1px solid #e2e2e2;
+  display: block;
+}
+.section-company .company-info .info-box .info-title {
+  width: 180px;
+  font-size: 14px;
+  font-family: "ヒラギノ角ゴシック";
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  line-height: 24px;
+  text-align: left;
+  padding: 20px 10px;
+}
+.section-company .company-info .info-box .info-text {
+  font-size: 14px;
+  font-family: "ヒラギノ角ゴシック";
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  line-height: 24px;
+  text-align: left;
+  padding: 20px 10px;
+}
+.section-company .company-info .info-box .info-text:last-child {
+  line-height: 26px;
+}
+.section-company .company-info .info-box:last-child {
+  border: none;
+}
+.section-company .info-map {
+  width: 60%;
+  height: 500px;
+}
+
+@media screen and (max-width: 768px) {
+  .section-company {
+    width: 100%;
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+  .section-company .company-info {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .section-company .company-info .info-box {
+    border-bottom: 1px solid #e2e2e2;
+    display: block;
+  }
+  .section-company .company-info .info-box .info-title {
+    padding: 20px 10px 5px 10px;
+  }
+  .section-company .company-info .info-box .info-text {
+    padding: 5px 10px 20px 10px;
+  }
+  .section-company .company-info .info-box .info-text:last-child {
+    line-height: 26px;
+  }
+  .section-company .company-info .info-box:last-child {
+    border: none;
+  }
+  .section-company .info-map {
+    width: 100%;
+    height: 300px;
+  }
+}
+.section-product {
+  padding-top: 120px;
+  padding-bottom: 160px;
+}
+.section-product .product-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 10px;
+}
+.section-product .product-list .product-list-item {
+  width: calc(calc(100% - 90px) / 4);
+  display: block;
+  margin-bottom: 20px;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.section-product .product-list .product-list-item .product-item .product-item-img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.section-product .product-list .product-list-item .product-item .product-item-title {
+  font-size: 12px;
+  font-weight: normal;
+  font-family: "ヒラギノ角ゴシック";
+  color: #333333;
+  text-align: left;
+  letter-spacing: 0.02em;
+  line-height: 21px;
+}
+.section-product .product-list .product-list-item .product-item .item-tax {
+  font-size: 12px;
+  font-weight: normal;
+  font-family: "ヒラギノ角ゴシック";
+  color: #333333;
+  text-align: left;
+  letter-spacing: 0.02em;
+  line-height: 21px;
+}
+.section-product .product-list .product-list-item:hover {
+  -webkit-filter: contrast(0.7);
+          filter: contrast(0.7);
+}
+.section-product .pagination {
+  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0 auto;
+}
+.section-product .pagination .page01 {
+  font-size: 14px;
+  font-weight: normal;
+  font-family: "ヒラギノ角ゴシック";
+  color: #333333;
+  padding: 0px 20px;
+}
+.section-product .pagination .page02 {
+  font-size: 14px;
+  font-weight: normal;
+  font-family: "ヒラギノ角ゴシック";
+  padding: 0px 20px 5px 20px;
+  cursor: pointer;
+}
+.section-product .pagination .page02 a {
+  color: #333333;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  .section-product {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+  .section-product .product-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+  .section-product .product-list .product-list-item {
+    list-style: none;
+    width: calc(calc(100% - 30px) / 2);
+  }
+  .section-product .product-list .product-list-item .product-item .product-item-img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .section-product .product-list .product-list-item:hover {
+    -webkit-filter: contrast(0.7);
+            filter: contrast(0.7);
+  }
+}
+.section-products2 {
+  padding-top: 120px;
+  padding-bottom: 160px;
+}
+.section-products2 .product-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 10px;
+}
+.section-products2 .product-list .product-list-item {
+  width: calc(calc(100% - 90px) / 4);
+  display: block;
+  margin-bottom: 20px;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.section-products2 .product-list .product-list-item .product-link .product-img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.section-products2 .product-list .product-list-item .product-link .product-title {
+  font-size: 12px;
+  font-weight: normal;
+  font-family: "ヒラギノ角ゴシック";
+  color: #333333;
+  text-align: left;
+  letter-spacing: 0.02em;
+  line-height: 21px;
+}
+.section-products2 .product-list .product-list-item .product-link .item-tax {
+  font-size: 12px;
+  font-weight: normal;
+  font-family: "ヒラギノ角ゴシック";
+  color: #333333;
+  text-align: left;
+  letter-spacing: 0.02em;
+  line-height: 21px;
+}
+.section-products2 .product-list .product-list-item:hover {
+  -webkit-filter: contrast(0.7);
+          filter: contrast(0.7);
+}
+.section-products2 .pagination {
+  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  margin: 0 auto;
+}
+.section-products2 .pagination .page01 {
+  font-size: 14px;
+  font-weight: normal;
+  font-family: "ヒラギノ角ゴシック";
+  color: #333333;
+  padding: 0px 20px;
+}
+.section-products2 .pagination .page01 a {
+  color: #333333;
+  text-decoration: underline;
+}
+.section-products2 .pagination .page02 {
+  font-size: 14px;
+  font-weight: normal;
+  font-family: "ヒラギノ角ゴシック";
+  padding: 0px 20px 5px 20px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .section-products2 {
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+  .section-products2 .product-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+  .section-products2 .product-list .product-list-item {
+    width: calc(calc(100% - 30px) / 2);
+    display: block;
+    margin-bottom: 20px;
+    cursor: pointer;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .section-products2 .product-list .product-list-item .product-link .product-img {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+.footer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 30px;
+}
+.footer .sns-box .instagram-link {
+  font-size: 12px;
+  font-family: "ヒラギノ角ゴシック";
+  font-weight: normal;
+  color: #333333;
+  letter-spacing: 0.1em;
+  line-height: 24px;
+  text-decoration: none;
+  margin-right: 30px;
+}
+.footer .sns-box .twitter-link {
+  font-size: 12px;
+  font-family: "ヒラギノ角ゴシック";
+  font-weight: normal;
+  color: #333333;
+  letter-spacing: 0.1em;
+  line-height: 24px;
+  text-decoration: none;
+  margin-right: 30px;
+}
+.footer .sns-box .facebook-link {
+  font-size: 12px;
+  font-family: "ヒラギノ角ゴシック";
+  font-weight: normal;
+  color: #333333;
+  letter-spacing: 0.1em;
+  line-height: 24px;
+  text-decoration: none;
+}
+.footer .copy-right {
+  font-size: 10px;
+  font-family: "ヒラギノ角ゴシック";
+  font-weight: normal;
+  color: #333333;
+  text-align: right;
+  letter-spacing: 0.1em;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    width: 100%;
+    display: block;
+    margin-bottom: 30px;
+  }
+  .footer .sns-box {
+    margin-bottom: 15px;
+  }
+  .footer .sns-box .instagram-link {
+    margin-right: 25px;
+  }
+  .footer .sns-box .twitter-link {
+    margin-right: 25px;
+  }
+  .footer .copy-right {
+    font-size: 9px;
+    text-align: left;
+  }
+}
+/*# sourceMappingURL=style.css.map */
